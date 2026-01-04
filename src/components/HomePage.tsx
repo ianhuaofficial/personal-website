@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Navigation } from "@/components/navigation"
-import { AboutSection } from "@/components/about-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { LifeSection } from "@/components/life-section"
+import { Navigation } from "./navigation"
+import { AboutSection } from "./about-section"
+import { ProjectsSection } from "./projects-section"
+import { LifeSection } from "./life-section"
 
-export default function Home() {
+export default function HomePage() {
   const [activeSection, setActiveSection] = useState<"about" | "projects" | "life">("about")
 
   return (
