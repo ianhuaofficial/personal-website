@@ -42,7 +42,7 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
     <nav className="border-b border-border/50 bg-background/80 backdrop-blur-md sticky top-0 z-50">
       <div className="mx-auto max-w-6xl px-6 md:px-16">
         <div className="flex h-20 items-center justify-between">
-          <div className="text-base font-medium tracking-tight text-foreground">Your Name</div>
+          <div className="text-base font-medium tracking-tight text-foreground">Ian Hua</div>
 
           <div className="flex items-center gap-8">
             <div className="flex gap-8">
