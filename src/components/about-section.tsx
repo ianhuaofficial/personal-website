@@ -1,4 +1,19 @@
-export function AboutSection() {
+interface AboutSectionProps {
+  data: {
+    name: string
+    location: string
+    title: string
+    subtitle: string
+    paragraphs: string[]
+    socialLinks: {
+      github: string
+      linkedin: string
+      x: string
+    }
+  }
+}
+
+export function AboutSection({ data }: AboutSectionProps) {
   return (
     <div className="animate-in fade-in duration-700 mx-auto">
       <div className="max-w-3xl space-y-16">
@@ -12,36 +27,29 @@ export function AboutSection() {
             <div className="space-y-6 flex-1">
               <div className="space-y-3">
                 <h1 className="text-5xl md:text-6xl font-medium tracking-tight text-balance text-foreground leading-[1.1]">
-                  Hello, I'm Ian
+                  Hello, I'm {data.name}
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  📍 London, UK
+                  📍 {data.location}
                 </p>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                I'm a Software Engineering Manager at Google. I work on edge AI products and infrastructure.
+                {data.subtitle}
               </p>
             </div>
           </div>
         </div>
 
         <div className="space-y-6 text-base text-foreground/80 leading-relaxed">
-          <p>
-            Currently I lead a team building on-device AI infrastructure powering Gemini Nano models on Android.
-            Prior to this, I was based in Silicon Valley, where I worked on virtual networking infrastructure at Google Cloud.
-          </p>
-          <p>
-            I hold an MBA from Imperial College London and an MSc in Electrical and Computer Engineering from Carnegie Mellon University.
-          </p>
-          <p>
-            When I'm not building, I usually hit the gym or spend time behind the decks DJing.
-          </p>
+          {data.paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </div>
 
         <div className="pt-8 border-t border-border/50">
           <div className="flex flex-wrap gap-x-8 gap-y-4">
             <a
-              href="https://github.com/ianhuaofficial"
+              href={data.socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
@@ -57,7 +65,7 @@ export function AboutSection() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/yianghua/"
+              href={data.socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
@@ -73,7 +81,7 @@ export function AboutSection() {
               <span>LinkedIn</span>
             </a>
             <a
-              href="https://x.com/ianhuaofficial"
+              href={data.socialLinks.x}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"

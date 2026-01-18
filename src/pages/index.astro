@@ -1,8 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomePage from '../components/HomePage';
+import { getCollection } from 'astro:content';
+
+const aboutEntries = await getCollection('about');
+const projectsEntries = await getCollection('projects');
+const lifeEntries = await getCollection('life');
+
+const aboutData = aboutEntries[0]?.data;
+const projectsData = projectsEntries[0]?.data;
+const lifeData = lifeEntries[0]?.data;
 ---
 
-<Layout title="Your Name - Portfolio">
-	<HomePage client:load />
+<Layout title={aboutData ? `${aboutData.name} - Portfolio` : "Portfolio"}>
+	<HomePage 
+		client:load 
+		aboutData={aboutData}
+		projectsData={projectsData}
+		lifeData={lifeData}
+	/>
 </Layout>

@@ -1,52 +1,28 @@
 import { ExternalLink } from "lucide-react"
 
-interface Project {
-  title: string
-  description: string
-  tags: string[]
-  link?: string
+interface ProjectsSectionProps {
+  data: {
+    title: string
+    subtitle: string
+    projects: Array<{
+      title: string
+      description: string
+      tags: string[]
+      link?: string
+    }>
+  }
 }
 
-const projects: Project[] = [
-  {
-    title: "Project One",
-    description:
-      "A comprehensive web application that solves real user problems with elegant design and performant architecture.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    link: "https://example.com",
-  },
-  {
-    title: "Project Two",
-    description:
-      "Modern static site generator with optimized builds and exceptional developer experience. Built for speed and simplicity.",
-    tags: ["Astro", "JavaScript", "CSS"],
-    link: "https://example.com",
-  },
-  {
-    title: "Project Three",
-    description:
-      "Full-stack platform with real-time features and scalable backend infrastructure. Designed for high-traffic applications.",
-    tags: ["Next.js", "Node.js", "PostgreSQL"],
-    link: "https://example.com",
-  },
-  {
-    title: "Project Four",
-    description:
-      "API-first architecture with robust authentication and data processing. Built to handle complex business logic.",
-    tags: ["Python", "Django", "React"],
-  },
-]
-
-export function ProjectsSection() {
+export function ProjectsSection({ data }: ProjectsSectionProps) {
   return (
     <div className="animate-in fade-in duration-700 max-w-5xl mx-auto">
       <div className="mb-16">
-        <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-4">Selected Work</h1>
-        <p className="text-lg text-muted-foreground">A collection of projects I'm proud of</p>
+        <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-4">{data.title}</h1>
+        <p className="text-lg text-muted-foreground">{data.subtitle}</p>
       </div>
 
       <div className="grid gap-8 sm:grid-cols-2">
-        {projects.map((project, index) => (
+        {data.projects.map((project, index) => (
           <div
             key={index}
             className="group relative bg-card border border-border/50 rounded-xl p-8 hover:border-border transition-all duration-300"
