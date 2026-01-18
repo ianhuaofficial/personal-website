@@ -1,32 +1,19 @@
 ---
-title: Selected Work
-subtitle: A collection of projects I'm proud of
+title: Projects
+subtitle: A portfolio of projects I worked on
 projects:
-  - title: Project One
-    description: A comprehensive web application that solves real user problems with elegant design and performant architecture.
+  - title: Android AICore
+    description: On-device GenAI and LLM service on Android leveraging [Gemini Nano](https://developer.android.com/ai/gemini-nano) models. It enables developers to deliver rich generative AI experiences without needing a network connection or sending data to the cloud.
     tags:
-      - React
-      - TypeScript
-      - Tailwind
-    link: https://example.com
-  - title: Project Two
-    description: Modern static site generator with optimized builds and exceptional developer experience. Built for speed and simplicity.
+      - LLM
+      - Hardware Acceleration
+      - Android System
+    link: https://android-developers.googleblog.com/2023/12/a-new-foundation-for-ai-on-android.html
+  - title: Qanari
+    description: Qanari is a personal voice newsletter. Qanari transforms articles, newsletters, and updates into personalized audio you can listen to from anywhere.
     tags:
-      - Astro
-      - JavaScript
-      - CSS
-    link: https://example.com
-  - title: Project Three
-    description: Full-stack platform with real-time features and scalable backend infrastructure. Designed for high-traffic applications.
-    tags:
-      - Next.js
-      - Node.js
-      - PostgreSQL
-    link: https://example.com
-  - title: Project Four
-    description: API-first architecture with robust authentication and data processing. Built to handle complex business logic.
-    tags:
+      - Flutter
+      - Dart
       - Python
-      - Django
-      - React
+    link: https://qanari.onrender.com/
 ---

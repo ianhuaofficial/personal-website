@@ -44,7 +44,15 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
                 )}
               </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+              <p 
+                className="text-sm text-muted-foreground leading-relaxed [&_a]:text-foreground [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-accent [&_a]:transition-colors"
+                dangerouslySetInnerHTML={{
+                  __html: project.description.replace(
+                    /\[([^\]]+)\]\(([^)]+)\)/g,
+                    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+                  )
+                }}
+              />
 
               <div className="flex flex-wrap gap-2 pt-2">
                 {project.tags.map((tag, tagIndex) => (
