@@ -40,7 +40,7 @@ const life = defineCollection({
     hobbies: z.array(
       z.object({
         title: z.string(),
-        description: z.string(),
+        paragraphs: z.array(z.string()),
       })
     ),
   }),

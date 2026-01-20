@@ -20,7 +20,7 @@ export function AboutSection({ data }: AboutSectionProps) {
         <div className="space-y-8">
           <div className="flex items-start gap-8 flex-col sm:flex-row">
             <img
-              src="/avatar.jpeg"
+              src="/avatar.jpg"
               alt="avatar"
               className="h-28 w-28 rounded-full object-cover flex-shrink-0"
             />
