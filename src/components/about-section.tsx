@@ -32,10 +32,13 @@ export function AboutSection({ data }: AboutSectionProps) {
                 <p className="text-lg text-muted-foreground">
                   📍 {data.location}
                 </p>
+                <p className="text-lg text-muted-foreground">
+                  💻 {data.title}
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                  🤖 {data.subtitle}
+                </p>
               </div>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                {data.subtitle}
-              </p>
             </div>
           </div>
         </div>
