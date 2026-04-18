@@ -15,5 +15,5 @@ projects:
       - Flutter
       - Dart
       - Python
-    link: https://qanari.onrender.com/
+    link: https://github.com/ianhuaofficial/qanari
 ---
